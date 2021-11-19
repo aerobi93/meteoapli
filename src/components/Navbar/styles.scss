@@ -1,0 +1,39 @@
+@use 'src/styles/vars';
+
+.navbar {
+  @media(max-width: 428px ) {
+    flex-direction: column;
+    max-width: 30%;
+  }
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin: vars.$margin /2;
+  text-transform: capitalize;
+
+  &-title {
+    font-size: vars.$fontSize * 2;
+  }
+
+  &-title, &-choice {
+    @media(max-width: 428px ) {
+      min-width: 1%;
+    }
+    color:blue;
+    padding: vars.$padding / 4;
+   
+
+    &__open {
+      @media(max-width: 428px ) {
+        min-width: 1%;
+      
+      }
+      background-color: #DB0084;
+      align-items: center;
+      border-radius: 10px;
+      padding: vars.$padding / 4;
+    }
+  }
+}
+

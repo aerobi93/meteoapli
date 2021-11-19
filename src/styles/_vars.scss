@@ -1,0 +1,15 @@
+@use 'sass:color';
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap');
+
+$margin: 1rem;
+$padding: 1rem;
+$fontSize: 1rem;
+$gradient: linear-gradient(#1A99D3, white,   #1A99D3);
+$font-family: 'EB Garamond', serif;
+$principal:#1A99D3;
+$degradeBlue: linear-gradient(#0076C9, #1B9AD3 );
+$second: color.scale($principal, $lightness: -70%)
+
+
+
+

@@ -1,0 +1,88 @@
+@use 'src/styles/vars';
+.thermometer {
+  width: 7rem; 
+  position: absolute;
+  
+  &-div {
+    height: 0.25rem;
+    width: 100%;
+   
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+  }
+  &-longe {
+    height: 2rem;
+    width: 3rem;
+    margin: 0 2rem;
+    border-left: black 1px solid;
+    border-right: black 1px solid;
+  }
+  &-ball {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    position: relative;
+    top: -1rem;
+    margin: 0 1rem;
+    &--red {
+      background: red;
+    }
+    &--blue {
+      background: blue;
+    }
+  }
+  &-number {
+    font-size: vars.$fontSize;
+    font-weight: bolder;
+    position: absolute;
+    top: -1rem;
+    &--left {
+      left: -1.5rem;
+      
+    }
+    &--right {
+      right: -1.5rem
+    }
+  }
+
+  &-color { 
+    border-left : solid black  1px ;
+    border-right : solid black  1px ;
+    display: flex;
+    justify-content: space-between;
+    height: 0.25rem;
+    width: 3rem;
+    
+    &--blue {
+     background: blue;
+    }
+    &--red {
+      background: red;
+      }
+    }
+
+  &-graduation{ 
+    width: 1rem;
+
+    &--right {
+      text-align: left;
+    }
+    &--left {
+      text-align: right;
+    }
+    &--short {
+      width: 2rem;
+      &::before {
+        content: '\002D';
+      }
+    }
+    &--long {
+      width: 2rem;
+      &::before {
+        content: '\002014';
+      }
+    }
+  }
+ 
+}

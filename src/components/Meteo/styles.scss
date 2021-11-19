@@ -1,0 +1,75 @@
+@use 'src/styles/vars';
+
+.meteo {
+  @media(max-width: 1200px) {
+    width: 70%;
+   
+  }
+  @media(max-width: 1024px) {
+    width: 100%;
+    margin:none;
+  }
+   
+  width: 50%;
+  margin: vars.$margin * 4 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding:  vars.$padding vars.$padding 0 vars.$padding;
+
+  &-town {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-family:  vars.$font-family;
+  }
+  &-nameTown {
+    @media(max-width: 728px) {
+      font-size: vars.$fontSize *3;
+    }
+    font-size: vars.$fontSize *4;
+    
+  }
+  &-changeTown {
+    font-size: vars.$fontSize;
+    margin-left: vars.$margin * 2 ;
+    padding: 1rem 0;
+    color:#DB0084;
+  }
+  
+}
+.spinner{
+  height: 6rem;
+  width: 6rem;
+  border: solid 1rem grey;
+  border-top: solid 1rem green;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {transform: rotate(360deg);}
+}
+
+.displayNav { 
+  @media(max-width: 428px) {
+    width: 100%;
+    padding: vars.$padding;
+    &::after {
+      content: '\002630 ';
+      font-size: vars.$fontSize *2;
+    }
+  }
+}
+.error {
+  width: 100%;
+  text-align: center;
+  font-size: vars.$fontSize *1.5;
+  color: red;
+}
+
+

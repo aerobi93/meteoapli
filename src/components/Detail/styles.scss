@@ -1,0 +1,208 @@
+@use 'src/styles/vars';
+
+.detail {
+  
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding : vars.$padding *2 0;
+  background: vars.$degradeBlue;
+
+  &-displaySun {
+    @media(max-width: 728px ){
+      top: -6rem;
+      right: 0%;
+    }
+    @media(max-width: 428px ){
+      top: 2rem;
+      right: 0%;
+    }
+    position: relative;
+    bottom: 3rem;
+    
+    &:after {
+      content: '\002B';
+      font-size: vars.$fontSize * 4;
+    }
+  }
+  &-degrade {
+    @media(max-width: 428px ){
+      margin: vars.$margin  0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, #1A99D3, white,   #1A99D3);
+    }
+    width: 1px;
+    height: 8rem;
+    background: vars.$gradient;
+  }
+
+  &-degradeHorizon {
+    margin: vars.$margin *2 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #1A99D3, white,   #1A99D3);
+  }
+
+  &-temperature {
+    margin-top: vars.$margin *3;
+    font-size: vars.$fontSize * 2;
+  }
+  &-temperatureResenti{
+    margin: 0.75rem 0;
+    font-size: vars.$fontSize *1.25;
+  }
+  &-tempMinMax {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+  }
+
+  &-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+  }
+  &-time {
+    width: 100%;
+    font-size: vars.$fontSize * 3;
+    text-align: center;
+    margin-bottom: vars.$margin;
+    font-family: vars.$font-family;
+  }
+  &-contentLeft,  &-contentRight,  &-contentCentral  {
+    @media(max-width: 728px ){
+      width: 40%;
+    }
+    @media(max-width: 428px ){
+      width: 100%;
+    }
+ 
+    width: 30%;
+    text-align: center;
+    height: 10rem;
+  
+  }
+  &-contentCentral {
+    @media(max-width: 428px ){
+      height: 8rem;
+    }
+  }
+  &-contentLeft {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  &-weatherIcon {
+    @media(max-width: 428px ){
+      width: 30%;
+    }
+   width: 60%;
+   margin: auto;
+   height: 8rem; 
+   background-repeat: no-repeat;
+   background-size: 8rem
+  }
+
+  &-weatherDescript {
+    font-size: vars.$fontSize ;
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+  &-positionArrow {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  &-gustRotate {
+    width:  0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 1.5rem;
+    border-left-width: 1.5rem;
+    border-bottom: 4rem solid gold;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  &-windSpeed{
+    margin: 0.25rem 0;
+  }
+ 
+}
+.prevision {
+  @media(max-width: 428px ){
+    flex-direction: column;
+  }
+    width:100%; 
+    display: flex;
+    margin-top: vars.$margin * 2 0 ;
+
+    &-sunMove {
+      @media(max-width: 767px ){
+        width: 100%;
+      }
+      width: calc(100% /3);
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content:center;
+
+    }
+    
+    &-sun {
+      width: 100%;
+    }
+
+    &-temp {
+      display: flex;
+      flex-direction: column;
+    }
+    &-moon {
+      @media(max-width: 767px ){
+        width: 100%;
+        margin: vars.$margin * 2 0;
+      }
+      width: calc(100% /3);
+    }
+    &-moonPhase {
+      margin:  0 auto;
+      height: 6rem;
+      width: 6rem;
+      border-radius: 50%;
+     transform: rotate(25deg);
+     box-shadow: 3px 1px rgb(59, 59, 59);
+    }
+    &-moonPhaseDegre {
+      margin-top: vars.$margin *1.5;
+      text-align: center;
+      font-size: vars.$fontSize;
+    }
+    &-moonPhase1 {
+      background: linear-gradient(90deg, white, rgb(128, 121, 121) 25% );
+    }
+    &-moonPhase2 {
+      background: linear-gradient(90deg, white, rgb(128, 121, 121) 50% );
+    }
+    &-moonPhase3 {
+      background: linear-gradient(270deg, white,grey 25% );
+    }
+    &-moonPhase4 {
+      background: radial-gradient(circle at 100% ,grey 75%, white  );
+
+    }
+    &-moonPhase5 {
+      background: radial-gradient(circle at 100%, white 75%, grey );
+    }
+
+    &-sunIcon {
+      background-color: chartreuse;
+      font-size: 10rem;
+      width: 100%;
+    }
+  }
+
+
+

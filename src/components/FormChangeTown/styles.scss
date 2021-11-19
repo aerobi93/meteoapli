@@ -1,0 +1,21 @@
+.form{ 
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+  &-input {
+    font-size: 1rem;
+    background-color: transparent;
+    padding: 1rem;
+    border: 1px solid black;
+    border-right: none;
+  }
+  &-submit {
+    background: transparent;
+    font-size: 2rem;
+    border: 1px solid black;
+    border-left: none;
+  }
+}
+

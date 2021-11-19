@@ -1,0 +1,58 @@
+@use 'src/styles/vars';
+.meteoWeek {
+  @media(max-width: 767px ){
+    padding-top: vars.$padding *2;
+    height: 15rem;
+  }
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+  text-align: center;
+  height: 13rem;
+  background: linear-gradient(#1B9AD3, #0076C9);
+
+  &::-webkit-scrollbar {
+    width: 1em;
+  }
+   
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #1aaffa;
+  }
+   
+  &::-webkit-scrollbar-thumb {
+    background-color: #15447a;
+    outline: 1px solid #1A99D3;
+  }
+
+  &-card  { 
+    @media(max-width: 767px ){
+        min-width: calc(100% / 4);
+    }
+    @media(max-width: 428px ){
+      min-width: 50%;
+    }
+   
+
+    background-color: white;
+    min-width: calc(100% / 5);
+    border-right: grey solid 1px;
+    border-left: grey solid 1px;
+    border-bottom: #DB0084 solid 0.5rem;
+    border-top:#DB0084 solid 0.5rem;
+  }
+
+  &-day {
+    width: 100%;
+    text-align: center;
+  }
+
+  &-icon {
+    width: 100%;
+    height: 8rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+ 
+  
+}
+
