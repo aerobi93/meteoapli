@@ -1,4 +1,7 @@
 import axios from 'axios';
+import env from "react-dotenv";
+
+
 import { SEARCH_COORDONATE, SEARCH_METEO } from '../action';
 import { newCoordonate, searchMeteo, meteoData, changeDisplay, cardToSelect } from '../action';
 
@@ -8,7 +11,7 @@ const ajax = (store) => (next) => (action) => {
   switch (action.type) {
     case SEARCH_COORDONATE:
       axios
-        .get(`http://api.openweathermap.org/data/2.5/weather?q=${action.value}&appid=3571c0352c17d542004999a575b6f178`)
+        .get(`http://api.openweathermap.org/data/2.5/weather?q=${action.value}&appid=${env.API_KEY}`)
         .then((response) => {
           store.dispatch(newCoordonate(response.data));
           store.dispatch(searchMeteo());
@@ -17,7 +20,7 @@ const ajax = (store) => (next) => (action) => {
       break;
     case SEARCH_METEO:
       axios
-        .get(`http://api.openweathermap.org/data/2.5/onecall?lat=${state.latitude}&lon=${state.longitude}&lang=fr&appid=3571c0352c17d542004999a575b6f178&unit=Celsius`)
+        .get(`http://api.openweathermap.org/data/2.5/onecall?lat=${state.latitude}&lon=${state.longitude}&lang=fr&appid=${env.API_KEY}&unit=Celsius`)
         .then((response) => {
           store.dispatch(cardToSelect(response.data.current.dt));
           store.dispatch(meteoData(response.data));
